@@ -17,6 +17,15 @@ body {
   text-shadow: 5px 5px black;
 }
 
+.movie-img {
+  border-radius: 10px;
+}
+
+.comment-img {
+  border-radius: 50px;
+  border: 2px solid black;
+}
+
 @media screen and (max-width: 600px) {
   .hero h2 {
     font-size: 6em;

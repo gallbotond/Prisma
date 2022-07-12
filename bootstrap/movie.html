@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Movie App</title>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="row justify-content-between">
+          <nav class="col navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                <h1 class="col-4">Movie App</h1>
+              </a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#"
+                      >Home</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#movies">Movies</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#authors">Authors</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <section>
+      <div class="container">
+        <div class="row m-3">
+          <div class="col-12 text-center">
+            <img src="img/1.jpg" alt="movie" class="img-fluid movie-img" />
+          </div>
+          <div class="col">
+            <h2 class="text-center my-3">Movie title</h2>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. At
+              impedit magnam quia officia nihil sit porro illo a consequuntur
+              maiores amet nemo repellat ipsam, id, dolore nobis corrupti veniam
+              illum accusamus, repellendus sint expedita reprehenderit quasi
+              beatae? At, numquam eligendi?
+            </p>
+          </div>
+        </div>
+        <div class="card m-3">
+          <div class="card-header">
+            <h3>Comments</h3>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-8 m-auto mb-3">
+                <img
+                  src="img/a.jpg"
+                  alt="profile"
+                  class="img-fluid comment-img"
+                />
+              </div>
+              <div class="col">
+                <h4>Name Name</h4>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Suscipit, error modi dolor ad repellendus minima voluptatibus
+                  consequatur! Quae, accusantium animi!
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="card-footer">
+            <div class="form-group">
+              <label for="comment" class="form-label">Comment: </label>
+              <input id="comment" type="text" class="form-control" />
+              <button class="btn btn-primary align-self-end my-2">Post</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-light text-center text-lg-start">
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2020 Copyright:
+        <a class="text-dark" href="https://www.theprismaplatform.com/?lang=hu"
+          >Prismaplatform.com</a
+        >
+      </div>
+      <!-- Copyright -->
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
