@@ -19,6 +19,6 @@ body {
 
 @media screen and (max-width: 600px) {
   .hero h2 {
-    font-size: 5em;
+    font-size: 6em;
   }
 }
