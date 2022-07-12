@@ -21,6 +21,10 @@ body {
   border-radius: 10px;
 }
 
+.author-img {
+  border-radius: 50px;
+}
+
 .comment-img {
   border-radius: 500px;
   border: 2px solid black;
