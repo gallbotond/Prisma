@@ -1,0 +1,153 @@
+:root {
+  --max-width: 900px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Oswald', sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+img {
+  margin: 1em;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  margin: 1em;
+}
+
+ul {
+  display: flex;
+  justify-content: end;
+  gap: 1em;
+}
+
+li {
+  list-style-type: none;
+}
+
+h1, h2 {
+  text-align: center;
+  margin: 1em;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3em;
+}
+
+section:first-child {
+  margin-top: 0;
+}
+
+a {
+  text-decoration: none;
+  color: orange;
+  text-shadow: 0 0 2px rgb(182, 182, 182);
+}
+
+a:hover,
+a:active {
+  color: rgb(255, 136, 0);
+  text-decoration: underline;
+}
+
+button {
+  border: 2px solid black;
+  font-family: inherit;
+  padding: .2em .5em;
+  font-size: 2em;
+  transition: .25s;
+}
+
+button:active, 
+button:hover {
+  transform: scale(1.1);
+}
+
+form {
+  background-color: wheat;
+  width: 70%;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+}
+
+input {
+  margin-bottom: 1em;
+}
+
+form > button {
+  font-size: 1em;
+  align-self: flex-end;
+}
+
+footer {
+  color: gray;
+  background-color: rgb(202, 202, 202);
+  display: flex;
+  justify-content: center;
+  padding: 4em;
+  margin-top: 2em;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  margin-top: 2em;
+}
+
+.container:first-child {
+  margin-top: 0;
+}
+
+.hero-section {
+  background-image: url('img/bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  height: 600px;
+}
+
+.hero-title {
+  font-size: 8em;
+  color: white;
+  text-shadow: 5px 5px black;
+}
+
+.movie-container,
+.author-container {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.author-container > img {
+  min-width: 100px;
+  width: 20%;
+}
+
+.movie-container > img {
+  min-width: 150px;
+  width: 25%;
+}
+
+@media screen and (max-width: 740px) {
+  .hero-section {
+    height: 800px;
+  }
+}
