@@ -1,0 +1,75 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar{
+    z-index: 2;
+}
+
+#hero{
+    height: 100vh;
+    width: 100%;
+    background-image: url(hero.jpeg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: -56px;
+}
+
+
+#hero:after{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    z-index: 1;
+    opacity: .8;
+    content: '';
+}
+
+.hero-text{
+    z-index: 3;
+}
+
+.card{
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.overlay{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.19791666666666663) 100%, rgba(0,0,0,0.4) 100%);
+}
+
+.movie-text{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    width: 100%;
+    bottom: 0px;
+    color: #fff;
+    padding: 10px;
+}
+
+.movie-text h3{
+    margin-bottom: 0px;
+}
+
+.card:hover .overlay{
+    opacity: .6;
+    transition: .6s ease-in;
+}
+
+.card:hover .movie-text {
+    bottom: 10px;
+    transition: .6s ease-in;
+}
