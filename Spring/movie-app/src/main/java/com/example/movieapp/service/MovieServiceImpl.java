@@ -40,4 +40,24 @@ public class MovieServiceImpl implements MovieService {
 
         return movieMapper.toDTO(newMovie);
     }
+
+    @Override
+    public MovieDTO update(MovieDTO dto) {
+        if(dto.getTitle().isEmpty() || dto.getAuthor().isEmpty()) {
+            throw new ServiceException("Fields can't be blank");
+        }
+
+        if(dto.getId() == null) {
+            throw new ServiceException("Invalid ID");
+        }
+
+        MovieEntity updatedEntity = new MovieEntity();
+        updatedEntity.setTitle(dto.getTitle());
+        updatedEntity.setAuthor(dto.getAuthor());
+        updatedEntity.setId(dto.getId());
+
+        MovieEntity newMovie = movieRepository.save(updatedEntity);
+
+        return movieMapper.toDTO(newMovie);
+    }
 }

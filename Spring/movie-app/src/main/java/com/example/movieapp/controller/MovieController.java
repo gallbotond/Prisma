@@ -39,4 +39,14 @@ public class MovieController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
+
+    @PutMapping("/put")
+    public ResponseEntity<?> updateMovie(@RequestBody MovieDTO movieDTO) {
+        try {
+            return ResponseEntity.ok().body(movieService.update(movieDTO));
+        }
+        catch (ServiceException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }
+    }
 }
