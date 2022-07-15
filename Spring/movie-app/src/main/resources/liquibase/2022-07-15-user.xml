@@ -1,0 +1,32 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="bgall" id="Create Table USER">
+        <createTable tableName="USER">
+            <column autoIncrement="true" name="ID" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_USER_ID"/>
+            </column>
+            <column name="USERNAME" type="VARCHAR2(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DATE" type="VARCHAR(255)">
+                <constraints nullable="false"></constraints>
+            </column>
+            <column name="BIO" type="VARCHAR2(255)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="create FK constraint for USER and COMMENT" author="bgall">
+        <addForeignKeyConstraint baseTableName="COMMENT" baseColumnNames="FK_USER_ID" constraintName="FK_USER_ID"
+                                 referencedTableName="USER"
+                                 referencedColumnNames="ID"
+                                 onDelete="CASCADE"
+                                 onUpdate="RESTRICT"
+                                 initiallyDeferred="false"
+                                 deferrable="false"></addForeignKeyConstraint>
+    </changeSet>
+
+</databaseChangeLog>

@@ -1,0 +1,10 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <include file="2022-07-14-movie.xml" relativeToChangelogFile="true" />
+    <include file="2022-07-15-author.xml" relativeToChangelogFile="true" />
+    <include file="2022-07-15-comment.xml" relativeToChangelogFile="true" />
+    <include file="2022-07-15-user.xml" relativeToChangelogFile="true" />
+</databaseChangeLog>

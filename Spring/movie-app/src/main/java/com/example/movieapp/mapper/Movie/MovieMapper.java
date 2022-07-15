@@ -1,26 +1,48 @@
 package com.example.movieapp.mapper.Movie;
 
+import com.example.movieapp.mapper.Author.AuthorMapper;
 import com.example.movieapp.model.MovieEntity;
+import lombok.AllArgsConstructor;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
+@AllArgsConstructor
 public class MovieMapper {
 
-    public MovieMapper(){}
+    private final AuthorMapper authorMapper = new AuthorMapper();
 
-    public MovieDTO toDTO(MovieEntity movieEntity) {
+    public MovieDto toDTO(MovieEntity movieEntity) {
 
-        MovieDTO dto = new MovieDTO();
+        MovieDto dto = new MovieDto();
 
         dto.setId(movieEntity.getId());
         dto.setTitle(movieEntity.getTitle());
-        dto.setAuthor(movieEntity.getAuthor());
+        dto.setDuration(movieEntity.getDuration());
+        dto.setGenre(movieEntity.getGenre());
+        dto.setAuthorDTO(authorMapper.toDTO(movieEntity.getAuthor()));
 
         return dto;
     }
 
-    public List<MovieDTO> toDtoList(List<MovieEntity> movieEntityList) {
+    public List<MovieDto> toDtoList(List<MovieEntity> movieEntityList) {
         return movieEntityList.stream().map(this::toDTO).collect(Collectors.toList());
+    }
+
+    public MovieEntity toEntity(MovieDto dto) {
+
+        MovieEntity movieEntity = new MovieEntity();
+
+        movieEntity.setId(dto.getId());
+        movieEntity.setTitle(dto.getTitle());
+        movieEntity.setDuration(dto.getDuration());
+        movieEntity.setGenre(dto.getGenre());
+        movieEntity.setAuthor(authorMapper.toEntity(dto.getAuthorDTO()));
+
+        return movieEntity;
+    }
+
+    public List<MovieEntity> toEntityList(List<MovieDto> movieDtos) {
+        return movieDtos.stream().map(this::toEntity).collect(Collectors.toList());
     }
 }

@@ -5,6 +5,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "movie")
 public class MovieEntity {
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Id
     @Column(name = "id")
     private Long id;
@@ -12,8 +13,15 @@ public class MovieEntity {
     @Column(name = "title")
     private String title;
 
-    @Column(name = "author")
-    private String author;
+    @Column(name = "duration")
+    private String duration;
+
+    @Column(name = "genre")
+    private String genre;
+
+    @ManyToOne(cascade = CascadeType.DETACH)
+    @JoinColumn(name = "FK_AUTHOR_ID")
+    private AuthorEntity author;
 
     public Long getId() {
         return id;
@@ -31,11 +39,27 @@ public class MovieEntity {
         this.title = title;
     }
 
-    public String getAuthor() {
+    public String getDuration() {
+        return duration;
+    }
+
+    public void setDuration(String duration) {
+        this.duration = duration;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public AuthorEntity getAuthor() {
         return author;
     }
 
-    public void setAuthor(String author) {
+    public void setAuthor(AuthorEntity author) {
         this.author = author;
     }
 }

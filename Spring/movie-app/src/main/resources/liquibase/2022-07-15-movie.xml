@@ -1,0 +1,15 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <changeSet id="create FK constraint for MOVIE and COMMENT" author="bgall">
+        <addForeignKeyConstraint baseTableName="COMMENT" baseColumnNames="FK_MOVIE_ID" constraintName="FK_MOVIE_ID"
+                                 referencedTableName="MOVIE"
+                                 referencedColumnNames="ID"
+                                 onUpdate="RESTRICT"
+                                 onDelete="CASCADE"
+                                 initiallyDeferred="false"
+                                 deferrable="false"></addForeignKeyConstraint>
+    </changeSet>
+</databaseChangeLog>

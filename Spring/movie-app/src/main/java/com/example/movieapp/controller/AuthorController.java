@@ -1,7 +1,7 @@
 package com.example.movieapp.controller;
 
-import com.example.movieapp.mapper.Movie.MovieDto;
-import com.example.movieapp.service.MovieService;
+import com.example.movieapp.mapper.Author.AuthorDto;
+import com.example.movieapp.service.AuthorService;
 import lombok.AllArgsConstructor;
 import org.hibernate.service.spi.ServiceException;
 import org.springframework.http.ResponseEntity;
@@ -9,21 +9,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-@RequestMapping("/movie")
+@RequestMapping("/author")
 @CrossOrigin
 @AllArgsConstructor
-public class MovieController {
-
-    private final MovieService movieService;
-
-//    public MovieController(MovieService movieService) {
-//        this.movieService = movieService;
-//    }
+public class AuthorController {
+    private final AuthorService authorService;
 
     @GetMapping("/get-all")
-    public ResponseEntity<?> getAllMovies() {
+    public ResponseEntity<?> getAllAuthors() {
         try {
-            return ResponseEntity.ok().body(movieService.findAllMovies());
+            return ResponseEntity.ok().body(authorService.findAllAuthors());
         }
         catch (ServiceException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
@@ -31,9 +26,9 @@ public class MovieController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> getMovie(@PathVariable("id") Long id) {
-        try {
-            return ResponseEntity.ok().body(movieService.findById(id));
+    public ResponseEntity<?> getAuthor(@PathVariable("id") Long id) {
+        try{
+            return ResponseEntity.ok().body(authorService.findById(id));
         }
         catch (ServiceException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
@@ -41,9 +36,9 @@ public class MovieController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<?> createMovie(@RequestBody MovieDto movieDTO) {
+    public ResponseEntity<?> createAuthor(@RequestBody AuthorDto authorDTO) {
         try {
-            return ResponseEntity.ok().body(movieService.create(movieDTO));
+            return ResponseEntity.ok().body(authorService.create(authorDTO));
         }
         catch (ServiceException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
@@ -51,9 +46,9 @@ public class MovieController {
     }
 
     @PutMapping("/update")
-    public ResponseEntity<?> updateMovie(@RequestBody MovieDto movieDTO) {
+    public ResponseEntity<?> updateAuthor(@RequestBody AuthorDto authorDTO) {
         try {
-            return ResponseEntity.ok().body(movieService.update(movieDTO));
+            return ResponseEntity.ok().body(authorService.update(authorDTO));
         }
         catch (ServiceException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
@@ -61,12 +56,12 @@ public class MovieController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> deleteMovie(@PathVariable("id") Long id) {
+    public ResponseEntity<?> deleteAuthor(@PathVariable("id") Long id) {
         try {
-            movieService.delete(id);
+            authorService.delete(id);
             return ResponseEntity.ok().build();
         }
-        catch (ServiceException e) {
+        catch (ServiceException e){
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }

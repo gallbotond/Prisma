@@ -1,0 +1,44 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="bgall" id="Create Table COMMENT">
+        <createTable tableName="COMMENT">
+            <column autoIncrement="true" name="ID" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_COMMENT_ID"/>
+            </column>
+            <column name="NAME" type="VARCHAR2(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="COMMENT" type="VARCHAR(255)">
+                <constraints nullable="false"></constraints>
+            </column>
+            <column name="DATE" type="VARCHAR2(255)"/>
+        </createTable>
+    </changeSet>
+    
+    <changeSet id="drop column NAME from table COMMENT" author="bgall">
+        <dropColumn tableName="COMMENT" columnName="NAME">
+            <column name="NAME"></column>
+        </dropColumn>
+    </changeSet>
+
+    <changeSet id="add FK_USER_ID column for table COMMENT" author="bgall">
+        <addColumn tableName="COMMENT">
+            <column name="FK_USER_ID" type="BIGINT">
+                <constraints nullable="false"></constraints>
+            </column>
+        </addColumn>
+    </changeSet>
+
+    <changeSet id="add FK_MOVIE_ID column for table COMMENT" author="bgall">
+        <addColumn tableName="COMMENT">
+            <column name="FK_MOVIE_ID" type="BIGINT">
+                <constraints nullable="false"></constraints>
+            </column>
+        </addColumn>
+    </changeSet>
+
+</databaseChangeLog>

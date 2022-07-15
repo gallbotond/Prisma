@@ -1,0 +1,42 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="bgall" id="Create Table Movie">
+        <createTable tableName="MOVIE">
+            <column autoIncrement="true" name="ID" type="BIGINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_MOVIE_ID"/>
+            </column>
+            <column name="TITLE" type="VARCHAR2(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="AUTHOR" type="VARCHAR2(255)"/>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="Add new columns to table MOVIE" author="bgall">
+        <addColumn tableName="MOVIE">
+            <column name="duration" type="varchar(255)"></column>
+            <column name="genre" type="varchar(255)">
+                <constraints nullable="false"></constraints>
+            </column>
+        </addColumn>
+    </changeSet>
+
+    <changeSet author="bgall" id="drop column AUTHOR from table MOVIE">
+        <dropColumn columnName="author" tableName="MOVIE">
+            <column name="author"/>
+        </dropColumn>
+    </changeSet>
+
+    <changeSet id="add FK column for Movie" author="bgall">
+        <addColumn tableName="MOVIE">
+            <column name="FK_AUTHOR_ID" type="BIGINT">
+                <constraints nullable="false"></constraints>
+            </column>
+        </addColumn>
+    </changeSet>
+
+</databaseChangeLog>
