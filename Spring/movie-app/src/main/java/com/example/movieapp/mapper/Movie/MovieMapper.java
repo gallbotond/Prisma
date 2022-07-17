@@ -20,7 +20,7 @@ public class MovieMapper {
         dto.setTitle(movieEntity.getTitle());
         dto.setDuration(movieEntity.getDuration());
         dto.setGenre(movieEntity.getGenre());
-        dto.setAuthorDTO(authorMapper.toDTO(movieEntity.getAuthor()));
+        dto.setAuthorDto(authorMapper.toDTO(movieEntity.getAuthor()));
 
         return dto;
     }
@@ -37,7 +37,7 @@ public class MovieMapper {
         movieEntity.setTitle(dto.getTitle());
         movieEntity.setDuration(dto.getDuration());
         movieEntity.setGenre(dto.getGenre());
-        movieEntity.setAuthor(authorMapper.toEntity(dto.getAuthorDTO()));
+        movieEntity.setAuthor(authorMapper.toEntity(dto.getAuthorDto()));
 
         return movieEntity;
     }

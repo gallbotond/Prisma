@@ -7,7 +7,7 @@ public class MovieDto {
     String title;
     String duration;
     String genre;
-    AuthorDto authorDTO;
+    AuthorDto authorDto;
 
     public Long getId() {
         return id;
@@ -41,11 +41,11 @@ public class MovieDto {
         this.genre = genre;
     }
 
-    public AuthorDto getAuthorDTO() {
-        return authorDTO;
+    public AuthorDto getAuthorDto() {
+        return authorDto;
     }
 
-    public void setAuthorDTO(AuthorDto authorDTO) {
-        this.authorDTO = authorDTO;
+    public void setAuthorDto(AuthorDto authorDto) {
+        this.authorDto = authorDto;
     }
 }

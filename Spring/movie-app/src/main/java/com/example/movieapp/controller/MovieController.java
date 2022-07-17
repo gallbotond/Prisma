@@ -41,9 +41,9 @@ public class MovieController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<?> createMovie(@RequestBody MovieDto movieDTO) {
+    public ResponseEntity<?> createMovie(@RequestBody MovieDto movieDto) {
         try {
-            return ResponseEntity.ok().body(movieService.create(movieDTO));
+            return ResponseEntity.ok().body(movieService.create(movieDto));
         }
         catch (ServiceException e) {
             return ResponseEntity.badRequest().body(e.getMessage());
@@ -51,9 +51,9 @@ public class MovieController {
     }
 
     @PutMapping("/update")
-    public ResponseEntity<?> updateMovie(@RequestBody MovieDto movieDTO) {
+    public ResponseEntity<?> updateMovie(@RequestBody MovieDto movieDto) {
         try {
-            return ResponseEntity.ok().body(movieService.update(movieDTO));
+            return ResponseEntity.ok().body(movieService.update(movieDto));
         }
         catch (ServiceException e) {
             return ResponseEntity.badRequest().body(e.getMessage());

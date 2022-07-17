@@ -18,9 +18,9 @@
 
     <changeSet id="Add new columns to table MOVIE" author="bgall">
         <addColumn tableName="MOVIE">
-            <column name="duration" type="varchar(255)"></column>
+            <column name="duration" type="varchar(255)" />
             <column name="genre" type="varchar(255)">
-                <constraints nullable="false"></constraints>
+                <constraints nullable="false" />
             </column>
         </addColumn>
     </changeSet>
@@ -34,7 +34,7 @@
     <changeSet id="add FK column for Movie" author="bgall">
         <addColumn tableName="MOVIE">
             <column name="FK_AUTHOR_ID" type="BIGINT">
-                <constraints nullable="false"></constraints>
+                <constraints nullable="false" />
             </column>
         </addColumn>
     </changeSet>

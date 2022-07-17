@@ -38,7 +38,7 @@ public class MovieServiceImpl implements MovieService {
             throw new ServiceException("Movie title can't be blank");
         }
 
-        Optional<AuthorEntity> authorEntityOptional = authorRepository.findById(dto.getAuthorDTO().getId());
+        Optional<AuthorEntity> authorEntityOptional = authorRepository.findById(dto.getAuthorDto().getId());
 
         if(authorEntityOptional.isEmpty())
             throw new EntityNotFoundException("Author wasn't found with the provided id");

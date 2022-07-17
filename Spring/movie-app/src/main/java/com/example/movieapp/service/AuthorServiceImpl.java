@@ -18,7 +18,6 @@ import java.util.Optional;
 public class AuthorServiceImpl implements AuthorService {
 
     private final AuthorRepository authorRepository;
-    private final MovieRepository movieRepository;
 
     private final AuthorMapper authorMapper = new AuthorMapper();
 
