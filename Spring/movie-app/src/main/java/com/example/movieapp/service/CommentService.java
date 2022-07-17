@@ -9,7 +9,7 @@ public interface CommentService {
      * Returns all comments from DB
      * @return List<CommentDto>
      */
-    List<CommentDto> findAllComment();
+    List<CommentDto> findAllComments();
 
     /**
      * Returns the comment with the provided id from DB
