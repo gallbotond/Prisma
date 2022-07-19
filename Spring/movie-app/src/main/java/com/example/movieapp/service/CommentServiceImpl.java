@@ -1,7 +1,8 @@
 package com.example.movieapp.service;
 
-import com.example.movieapp.mapper.Comment.CommentDto;
 import com.example.movieapp.mapper.Comment.CommentMapper;
+import com.example.movieapp.mapper.Comment.CommentDto;
+import com.example.movieapp.mapper.Comment.CreateCommentDto;
 import com.example.movieapp.model.CommentEntity;
 import com.example.movieapp.model.MovieEntity;
 import com.example.movieapp.model.UserEntity;
@@ -9,7 +10,6 @@ import com.example.movieapp.repository.CommentRepository;
 import com.example.movieapp.repository.MovieRepository;
 import com.example.movieapp.repository.UserRepository;
 import lombok.AllArgsConstructor;
-import org.hibernate.persister.walking.spi.EntityIdentifierDefinition;
 import org.hibernate.service.spi.ServiceException;
 import org.springframework.stereotype.Service;
 
@@ -37,22 +37,16 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public CommentDto create(CommentDto dto) {
-        return getCommentDto(dto);
-    }
+    public CommentDto create(CreateCommentDto dto) {
 
-    @Override
-    public CommentDto update(CommentDto dto) {
-        return getCommentDto(dto);
-    }
+        CommentEntity comment = new CommentEntity();
 
-    private CommentDto getCommentDto(CommentDto dto) {
-        if(dto.getComment().isEmpty()) {
-            throw new ServiceException("Comment field can't be blank");
-        }
+        comment.setId(dto.getId());
+        comment.setComment(dto.getComment());
+        comment.setDate(dto.getDate());
 
-        Optional<UserEntity> userEntityOptional = userRepository.findById(dto.getUserDto().getId());
-        Optional<MovieEntity> movieEntityOptional = movieRepository.findById(dto.getMovieDto().getId());
+        Optional<UserEntity> userEntityOptional = userRepository.findById(dto.getUserId());
+        Optional<MovieEntity> movieEntityOptional = movieRepository.findById(dto.getMovieId());
 
         if(userEntityOptional.isEmpty()) {
             throw new EntityNotFoundException("User wasn't found with the provided ID");
@@ -61,10 +55,34 @@ public class CommentServiceImpl implements CommentService {
             throw new EntityNotFoundException("Movie wasn't found with the provided ID");
         }
 
-        CommentEntity commentEntity = commentMapper.toEntity(dto);
-        CommentEntity newComment = commentRepository.save(commentEntity);
+        comment.setUserEntity(userEntityOptional.get());
+        comment.setMovieEntity(movieEntityOptional.get());
 
-        return commentMapper.toDto(newComment);
+        return commentMapper.toDto(commentRepository.save(comment));
+    }
+
+    @Override
+    public CommentDto update(CommentDto dto) {
+        CommentEntity comment = new CommentEntity();
+
+        comment.setId(dto.getId());
+        comment.setComment(dto.getComment());
+        comment.setDate(dto.getDate());
+
+        Optional<UserEntity> userEntityOptional = userRepository.findById(dto.getId());
+        Optional<MovieEntity> movieEntityOptional = movieRepository.findById(dto.getId());
+
+        if(userEntityOptional.isEmpty()) {
+            throw new EntityNotFoundException("User wasn't found with the provided ID");
+        }
+        if(movieEntityOptional.isEmpty()) {
+            throw new EntityNotFoundException("Movie wasn't found with the provided ID");
+        }
+
+        comment.setUserEntity(userEntityOptional.get());
+        comment.setMovieEntity(movieEntityOptional.get());
+
+        return commentMapper.toDto(commentRepository.save(comment));
     }
 
     @Override

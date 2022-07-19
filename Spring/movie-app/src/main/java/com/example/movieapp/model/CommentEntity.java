@@ -1,6 +1,7 @@
 package com.example.movieapp.model;
 
 import javax.persistence.*;
+import java.util.Optional;
 
 @Entity
 @Table(name = "comment")
@@ -18,11 +19,11 @@ public class CommentEntity {
 
     @ManyToOne(cascade = CascadeType.DETACH)
     @JoinColumn(name = "FK_USER_ID")
-    private UserEntity user;
+    private UserEntity userEntity;
 
-    @OneToOne(cascade = CascadeType.DETACH)
+    @ManyToOne(cascade = CascadeType.DETACH)
     @JoinColumn(name = "FK_MOVIE_ID")
-    private MovieEntity movie;
+    private MovieEntity movieEntity;
 
     public Long getId() {
         return id;
@@ -48,19 +49,19 @@ public class CommentEntity {
         this.date = date;
     }
 
-    public UserEntity getUser() {
-        return user;
+    public UserEntity getUserEntity() {
+        return userEntity;
     }
 
-    public void setUser(UserEntity user) {
-        this.user = user;
+    public void setUserEntity(UserEntity userEntity) {
+        this.userEntity = userEntity;
     }
 
-    public MovieEntity getMovie() {
-        return movie;
+    public MovieEntity getMovieEntity() {
+        return movieEntity;
     }
 
-    public void setMovie(MovieEntity movie) {
-        this.movie = movie;
+    public void setMovieEntity(MovieEntity movieEntity) {
+        this.movieEntity = movieEntity;
     }
 }

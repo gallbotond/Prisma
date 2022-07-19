@@ -1,6 +1,8 @@
 package com.example.movieapp.service;
 
 import com.example.movieapp.mapper.Comment.CommentDto;
+import com.example.movieapp.mapper.Comment.CommentDto;
+import com.example.movieapp.mapper.Comment.CreateCommentDto;
 
 import java.util.List;
 
@@ -23,7 +25,7 @@ public interface CommentService {
      * @param dto comment to create
      * @return the created CommentDto
      */
-    CommentDto create(CommentDto dto);
+    CommentDto create(CreateCommentDto dto);
 
     /**
      * Returns the updated comment from the DB

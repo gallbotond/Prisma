@@ -1,6 +1,7 @@
 package com.example.movieapp.controller;
 
 import com.example.movieapp.mapper.Comment.CommentDto;
+import com.example.movieapp.mapper.Comment.CreateCommentDto;
 import com.example.movieapp.service.CommentService;
 import lombok.AllArgsConstructor;
 import org.hibernate.service.spi.ServiceException;
@@ -37,7 +38,7 @@ public class CommentController {
     }
 
     @PostMapping("/create")
-    public ResponseEntity<?> createComment(@RequestBody CommentDto dto) {
+    public ResponseEntity<?> createComment(@RequestBody CreateCommentDto dto) {
         try {
             return ResponseEntity.ok().body(commentService.create(dto));
         }
@@ -47,7 +48,7 @@ public class CommentController {
     }
 
     @PutMapping("/update")
-    public ResponseEntity<?> updateComment(@RequestBody CommentDto dto) {
+    public ResponseEntity<?> updateComment(@RequestBody CreateCommentDto dto) {
         try {
             return ResponseEntity.ok().body(commentService.create(dto));
         }

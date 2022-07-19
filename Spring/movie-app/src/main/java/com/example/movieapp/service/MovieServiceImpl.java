@@ -29,7 +29,7 @@ public class MovieServiceImpl implements MovieService {
 
     @Override
     public MovieDto findById(Long id) {
-        return movieMapper.toDTO(movieRepository.getReferenceById(id));
+        return movieMapper.toDto(movieRepository.getReferenceById(id));
     }
 
     @Override
@@ -46,7 +46,7 @@ public class MovieServiceImpl implements MovieService {
         MovieEntity movieEntity = movieMapper.toEntity(dto);
         MovieEntity newMovie = movieRepository.save(movieEntity);
 
-        return movieMapper.toDTO(newMovie);
+        return movieMapper.toDto(newMovie);
     }
 
     @Override
@@ -67,7 +67,7 @@ public class MovieServiceImpl implements MovieService {
         MovieEntity updatedEntity = movieMapper.toEntity(dto);
         MovieEntity newMovie = movieRepository.save(updatedEntity);
 
-        return movieMapper.toDTO(newMovie);
+        return movieMapper.toDto(newMovie);
     }
 
     @Override

@@ -3,6 +3,7 @@ package com.example.movieapp.mapper.Comment;
 import com.example.movieapp.mapper.Movie.MovieMapper;
 import com.example.movieapp.mapper.User.UserMapper;
 import com.example.movieapp.model.CommentEntity;
+import com.example.movieapp.service.MovieService;
 import lombok.AllArgsConstructor;
 
 import java.util.List;
@@ -20,8 +21,8 @@ public class CommentMapper {
         dto.setId(commentEntity.getId());
         dto.setComment(commentEntity.getComment());
         dto.setDate(commentEntity.getDate());
-        dto.setUserDto(userMapper.toDto(commentEntity.getUser()));
-        dto.setMovieDto(movieMapper.toDTO(commentEntity.getMovie()));
+        dto.setUserDto(userMapper.toDto(commentEntity.getUserEntity()));
+        dto.setMovieDto(movieMapper.toDto(commentEntity.getMovieEntity()));
 
         return dto;
     }
@@ -30,15 +31,4 @@ public class CommentMapper {
         return commentEntityList.stream().map(this::toDto).collect(Collectors.toList());
     }
 
-    public CommentEntity toEntity(CommentDto dto) {
-        CommentEntity commentEntity = new CommentEntity();
-
-        commentEntity.setId(dto.getId());
-        commentEntity.setComment(dto.getComment());
-        commentEntity.setDate(dto.getDate());
-        commentEntity.setUser(userMapper.toEntity(dto.getUserDto()));
-        commentEntity.setMovie(movieMapper.toEntity(dto.getMovieDto()));
-
-        return commentEntity;
-    }
 }

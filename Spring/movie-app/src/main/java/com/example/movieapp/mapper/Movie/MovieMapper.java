@@ -2,6 +2,7 @@ package com.example.movieapp.mapper.Movie;
 
 import com.example.movieapp.mapper.Author.AuthorMapper;
 import com.example.movieapp.model.MovieEntity;
+import com.example.movieapp.model.UserEntity;
 import lombok.AllArgsConstructor;
 
 import java.util.List;
@@ -12,7 +13,7 @@ public class MovieMapper {
 
     private final AuthorMapper authorMapper = new AuthorMapper();
 
-    public MovieDto toDTO(MovieEntity movieEntity) {
+    public MovieDto toDto(MovieEntity movieEntity) {
 
         MovieDto dto = new MovieDto();
 
@@ -26,7 +27,7 @@ public class MovieMapper {
     }
 
     public List<MovieDto> toDtoList(List<MovieEntity> movieEntityList) {
-        return movieEntityList.stream().map(this::toDTO).collect(Collectors.toList());
+        return movieEntityList.stream().map(this::toDto).collect(Collectors.toList());
     }
 
     public MovieEntity toEntity(MovieDto dto) {
@@ -45,4 +46,5 @@ public class MovieMapper {
     public List<MovieEntity> toEntityList(List<MovieDto> movieDtos) {
         return movieDtos.stream().map(this::toEntity).collect(Collectors.toList());
     }
+
 }
