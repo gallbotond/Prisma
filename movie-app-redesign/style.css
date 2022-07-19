@@ -1,14 +1,57 @@
+body {
+  margin: 0;
+  position: relative;
+  height: calc(100vh - 56px);
+}
 
-a {
+.body-bg {
+  background: linear-gradient(
+    0deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 1) 100%
+  );
+  height: 100vh;
+  position: relative;
+  top: -56px;
+}
+
+.navbar a {
   color: white !important;
+  font-weight: 700;
+  text-shadow: 0 0 5px black;
+}
+
+.navbar > * {
+  z-index: 1;
+}
+
+.container-fluid {
+  padding: 0;
 }
 
 .hero-section {
-  background-image: url(img/hero.jpg);
-  background-position: center;
-  background-size: cover;
-  height: 100vh;
   position: absolute;
   top: 0;
   z-index: -1;
+}
+
+.carousel-item {
+  background: linear-gradient(
+    0deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+
+.hero-section img {
+  height: 100vh;
+  object-fit: cover;
+  background: linear-gradient(
+    0deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(255, 255, 255, 0) 50%,
+    rgba(0, 0, 0, 1) 100%
+  );
 }
