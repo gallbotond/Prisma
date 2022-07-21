@@ -4,20 +4,20 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
-      crossorigin="anonymous"
-    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Oswald&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <title>Movie App</title>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
@@ -87,33 +87,27 @@
       </div>
     </nav>
 
-    <section class="hero-section container-fluid">
-      <div
-        id="carouselExampleSlidesOnly"
-        class="carousel slide"
-        data-bs-ride="carousel"
-      >
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img class="image" src="/img/carousel (1).jpg" alt="" />
+    <div class="other-gradient"></div>
+
+    <section>
+      <div class="container">
+        <div class="row m-3">
+          <div class="col-12 text-center col-sm-4">
+            <img src="img/b.jpg" alt="author" class="img-fluid movie-img" />
           </div>
-          <div class="carousel-item">
-            <img class="image" src="img/carousel (2).jpg" alt="..." />
+          <div class="col">
+            <h2 class="text-left my-3">Author Name</h2>
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. At
+              impedit magnam quia officia nihil sit porro illo a consequuntur
+              maiores amet nemo repellat ipsam, id, dolore nobis corrupti veniam
+              illum accusamus, repellendus sint expedita reprehenderit quasi
+              beatae? At, numquam eligendi?
+            </p>
           </div>
         </div>
       </div>
     </section>
-
-    <div class="hero-body-gradient">
-      <section
-        class="container-fluid m-auto text-center position-relative hero"
-      >
-        <div class="position-absolute top-50 start-50 translate-middle">
-          <h2 class="">Movie App</h2>
-          <button class="btn btn-primary m-3">Get subscription</button>
-        </div>
-      </section>
-    </div>
 
     <section id="movies" class="m-5 text-center">
       <div class="container">
@@ -128,81 +122,25 @@
           <div class="col-md-4 col-sm-12 p-2">
             <img class="img-fluid movie-img" src="img/3.jpg" alt="" />
           </div>
-          <div class="col-md-4 col-sm-12 p-2">
-            <img class="img-fluid movie-img" src="img/4.jpg" alt="" />
-          </div>
-          <div class="col-md-4 col-sm-12 p-2">
-            <img class="img-fluid movie-img" src="img/1.jpg" alt="" />
-          </div>
-          <div class="col-md-4 col-sm-12 p-2">
-            <img class="img-fluid movie-img" src="img/2.jpg" alt="" />
-          </div>
         </div>
       </div>
     </section>
 
-    <section id="authors" class="m-5 text-center">
-      <div class="container">
-        <h2>Authors</h2>
-        <div class="row">
-          <img
-            class="img-fluid col-md-3 col-sm-12 p-3 author-img"
-            src="img/b.jpg"
-            alt=""
-          />
-          <img
-            class="img-fluid col-md-3 col-sm-12 p-3 author-img"
-            src="img/c.jpg"
-            alt=""
-          />
-          <img
-            class="img-fluid col-md-3 col-sm-12 p-3 author-img"
-            src="img/d.jpg"
-            alt=""
-          />
-          <img
-            class="img-fluid col-md-3 col-sm-12 p-3 author-img"
-            src="img/a.jpg"
-            alt=""
-          />
-        </div>
+    <footer class="bg-light text-center text-lg-start">
+      <!-- Copyright -->
+      <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+        © 2020 Copyright:
+        <a class="text-dark" href="https://www.theprismaplatform.com/?lang=hu"
+          >Prismaplatform.com</a
+        >
       </div>
-    </section>
-
-    <section id="contact" class="m-5 justify-content-center">
-      <h2 class="text-center">Contact</h2>
-      <form action="" class="card p-3 m-auto col-12 col-sm-6">
-        <div class="mb-3">
-          <label for="name" class="form-label">Name</label>
-          <input type="text" class="form-control" name="name" id="name" />
-        </div>
-        <div class="mb-3">
-          <label for="email" class="form-label">Email</label>
-          <input type="email" class="form-control" name="email" id="email" />
-        </div>
-        <button type="submit" class="btn btn-primary align-self-end">
-          Submit
-        </button>
-      </form>
-    </section>
-  </main>
-
-  <footer class="bg-light text-center text-lg-start">
-    <!-- Copyright -->
-    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
-      © 2020 Copyright:
-      <a class="text-dark" href="https://www.theprismaplatform.com/?lang=hu"
-        >Prismaplatform.com</a
-      >
-    </div>
-    <!-- Copyright -->
-  </footer>
+      <!-- Copyright -->
+    </footer>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
-    <script src="index.js"></script>
   </body>
 </html>
